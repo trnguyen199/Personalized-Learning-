@@ -46,51 +46,90 @@
 
 \begin{document}
 
-% =========================
-% Cover
-% =========================
+% ============================================================
+% COVER PAGE
+% ============================================================
+
 \begin{titlepage}
-\centering
-\vspace*{1.2cm}
-
-{\Large \textbf{CAPSTONE PROJECT REPORT}\par}
-\vspace{1.2cm}
-
-{\Huge \textbf{\projecttitle}\par}
-\vspace{0.8cm}
-
-{\Large \projecttitlevi\par}
-
-\vfill
-
-\begin{tabular}{ll}
-\textbf{Project Type:} & AI-powered Personalized Learning Platform\\
-\textbf{Main Platforms:} & Mobile Application and Web Application\\
-\textbf{Core AI:} & Recommendation, Knowledge Tracing, Prediction, LLM, RAG\\
-\textbf{Database:} & PostgreSQL\\
-\textbf{Cloud:} & Microsoft Azure\\
-\textbf{Version Control:} & GitHub
-\end{tabular}
-
-\vfill
-
-{\large \textbf{Project Team}\par}
-\vspace{0.3cm}
-\begin{tabular}{cl}
-\textbf{Nguyễn Thúy Nhi } & Main Content\\
-\textbf{Phan Đình Quân } & Research and Supplementation\\
-\textbf{Nguyễn Phạm Quỳnh Như} & Diagrams and Models\\
-\textbf{Trương Nguyễn Trí Cường } & Technical Review\\
-\textbf{Nguyễn Trung Nguyên } & Integration and LaTeX Formatting
-
-\end{tabular}
-
-\vfill
-{\large Academic Year 2026\par}
+	\centering
+	
+	% --------------------------------------------------------
+	% UNIVERSITY NAME
+	% --------------------------------------------------------
+	{\large\bfseries
+		TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TẢI\\
+		THÀNH PHỐ HỒ CHÍ MINH
+		\par}
+	
+	\vspace{0.15cm}
+	
+	{\large\bfseries
+		UNIVERSITY OF TRANSPORT HO CHI MINH CITY
+		\par}
+	
+	\vspace{0.15cm}
+	
+	{\large\bfseries
+		----- OOO -----
+		\par}
+	
+	\vspace{0.8cm}
+	
+	% --------------------------------------------------------
+	% UTH LOGO
+	% --------------------------------------------------------
+	\includegraphics[width=6.5cm]{images/uth_logo.png}
+	
+	\vspace{1.2cm}
+	
+	% --------------------------------------------------------
+	% REPORT TYPE
+	% --------------------------------------------------------
+	{\large\bfseries
+		CAPSTONE PROJECT REPORT
+		\par}
+	
+	\vspace{0.8cm}
+	
+	% --------------------------------------------------------
+	% PROJECT TITLE
+	% --------------------------------------------------------
+	{\LARGE\bfseries
+		AI-powered Personalized Learning\\
+		Path Platform for Competency\\
+		Assessment Exam Preparation
+		\par}
+	
+	\vspace{0.5cm}
+	
+	{\large
+		Hệ thống cá nhân hóa lộ trình học và luyện thi Đánh giá năng\\
+		lực tích hợp AI
+		\par}
+	
+	\vspace{1.2cm}
+	
+	
+	% --------------------------------------------------------
+	% PROJECT TEAM
+	% --------------------------------------------------------
+	{\large\bfseries Project Team\par}
+	
+	\vspace{0.4cm}
+	
+	\begin{tabular}{r l}
+		Nguyễn Thúy Nhi & Main Content \\
+		Phan Đình Quân & Research and Supplementation \\
+		Trương Nguyễn Trí Cường & Technical Review \\
+		Nguyễn Trung Nguyên & Integration and LaTeX Formatting\\
+		&\& Diagrams and Models\\
+	\end{tabular}
+	
+	\vfill
+	
+	{\large Academic Year 2026\par}
+	
 \end{titlepage}
-
-\hypersetup{pageanchor=false}
-\pagenumbering{roman}
 
 % =========================
 % Abstract
@@ -246,30 +285,12 @@ Integration & APIs designed for future LMS and examination-framework integration
 The platform is designed as a modular ecosystem separating client applications, backend services, AI services, and analytics.
 
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}[
-    box/.style={rectangle, rounded corners, draw, minimum width=3.2cm, minimum height=0.9cm, align=center},
-    arrow/.style={-{Latex}, thick},
-    node distance=0.9cm and 1.0cm
-]
-\node[box] (mobile) {Student\\Mobile App};
-\node[box, right=of mobile] (web) {Web Application\\Teacher / Admin / Parent};
-\node[box, below=of $(mobile)!0.5!(web)$] (backend) {Backend Services\\REST APIs};
-\node[box, below=of backend] (db) {PostgreSQL\\Learning Data};
-\node[box, left=of db] (ai) {AI Services\\Recommendation / Prediction};
-\node[box, right=of db] (rag) {LLM + RAG\\AI Tutor};
-\node[box, below=of $(ai)!0.5!(rag)$] (analytics) {Learning Analytics};
-
-\draw[arrow] (mobile) -- (backend);
-\draw[arrow] (web) -- (backend);
-\draw[arrow] (backend) -- (db);
-\draw[arrow] (backend) -- (ai);
-\draw[arrow] (backend) -- (rag);
-\draw[arrow] (db) -- (analytics);
-\draw[arrow] (analytics) -- (ai);
-\end{tikzpicture}
-\caption{High-level proposed system architecture}
+	\centering
+	\includegraphics[width=0.95\textwidth]{images/system_architecture.png}
+	\caption{High-level proposed system architecture}
+	\label{fig:system-architecture}
 \end{figure}
+
 
 \section{Main Modules}
 
@@ -284,6 +305,27 @@ The platform is designed as a modular ecosystem separating client applications, 
     \item Learning analytics.
     \item Examination performance prediction.
 \end{itemize}
+\section{Database Design}
+
+The database is designed to support user management, student
+profiles, learning activities, courses, learning materials,
+assessments, recommendations, and learning analytics.
+
+The conceptual database model identifies the main entities and
+their relationships within the personalized learning platform.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{images/03_database_erd.png}
+	\caption{Conceptual Database ERD}
+	\label{fig:database-erd}
+\end{figure}
+
+The ERD provides the conceptual structure for storing and
+managing learning-related data. The main entities include users,
+roles, student profiles, learning profiles, learning activities,
+courses, learning materials, assessments, recommendations,
+analytics, and questions.
 
 \section{Technology Stack}
 
@@ -294,7 +336,7 @@ The platform is designed as a modular ecosystem separating client applications, 
 Mobile & Flutter (Android and iOS)\\
 Web & ReactJS / Next.js\\
 Backend & ASP.NET Core Web API or Node.js (Express)\\
-Database & PostgreSQL\\
+\textbf{Database }& PostgreSQL\\
 Authentication & JWT and OAuth2\\
 AI & LLMs, recommendation systems, knowledge tracing, machine learning\\
 RAG & LangChain or Semantic Kernel\\
@@ -314,9 +356,29 @@ The overall learning data flow starts with assessment and learning activities. T
 % ============================================================
 \chapter{MOBILE APPLICATION}
 
-\section{Purpose}
+\section{Overview}
 
-The mobile application is designed primarily for students and supports personalized learning, adaptive practice, AI Tutor interaction, and progress tracking.
+The mobile application is designed for students to access
+personalized learning paths, diagnostic assessments, and
+AI-powered tutoring features.
+
+\section{Mobile Application UI Design}
+
+The student mobile application provides an intuitive interface
+for accessing the personalized learning path, completing
+diagnostic quizzes, and interacting with the AI tutor.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{images/05_mobile_app_ui.png}
+	\caption{Student Mobile Application Design}
+	\label{fig:student-mobile-ui}
+\end{figure}
+
+As illustrated in Figure~\ref{fig:student-mobile-ui}, the mobile
+application consists of three main interfaces: the Home /
+Learning Path screen, the Diagnostic / Quiz screen, and the
+AI Tutor screen.
 
 \section{Main Student Features}
 
@@ -348,33 +410,73 @@ During learning, the roadmap is updated according to quiz performance, competenc
 
 \section{Purpose}
 
-The web application provides management and monitoring functions for administrators, teachers, academic managers, and parents.
+The web application provides management and monitoring functions for
+administrators, teachers, academic managers, and parents.
+
+The web application acts as a centralized interface for managing
+learning content, monitoring student progress, reviewing assessments,
+and accessing analytics and AI-generated recommendations.
+
+\section{Web Application Dashboard}
+
+The web application provides a centralized dashboard for
+administrators, teachers, academic managers, and parents to
+monitor and manage learning activities.
+
+The dashboard presents an overview of important learning
+information, including student activity, learning progress,
+competency levels, prediction results, alerts, and
+AI-generated recommendations.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{images/06_web_dashboard.png}
+	\caption{Web Application Dashboard Design}
+	\label{fig:web-dashboard}
+\end{figure}
+
+Figure~\ref{fig:web-dashboard} illustrates the proposed
+web application dashboard. The dashboard contains several
+main areas, including student statistics, competency
+overview, prediction results, learning progress, and
+alerts and recommendations.
+
+The sidebar provides access to the main modules of the
+web application, including Users and Roles, Courses,
+Question Bank, Assessments, Analytics, and AI Recommendations.
+% ------------------------------------------------------------
+% Administrator Functions
+% ------------------------------------------------------------
 
 \section{Administrator Functions}
 
 Administrators manage:
 
 \begin{itemize}
-    \item Users and roles.
-    \item Courses.
-    \item Competency frameworks.
-    \item Question banks.
-    \item Learning resources.
-    \item AI services and system settings.
-    \item Overall platform operations.
+	\item Users and roles.
+	\item Courses.
+	\item Competency frameworks.
+	\item Question banks.
+	\item Learning resources.
+	\item AI services and system settings.
+	\item Overall platform operations.
 \end{itemize}
+
+% ------------------------------------------------------------
+% Teacher and Academic Manager Functions
+% ------------------------------------------------------------
 
 \section{Teacher and Academic Manager Functions}
 
 Teachers and academic managers can:
 
 \begin{itemize}
-    \item Develop and organize learning materials.
-    \item Manage knowledge domains and learning objectives.
-    \item Create and maintain mock examinations.
-    \item Evaluate question quality.
-    \item Review student learning progress.
-    \item Monitor AI recommendation quality.
+	\item Develop and organize learning materials.
+	\item Manage knowledge domains and learning objectives.
+	\item Create and maintain mock examinations.
+	\item Evaluate question quality.
+	\item Review student learning progress.
+	\item Monitor AI recommendation quality.
 \end{itemize}
 
 \section{Parent Monitoring}
@@ -444,30 +546,129 @@ The AI Tutor provides learning support throughout the student's learning journey
     \item Answering academic questions.
 \end{itemize}
 
+\section{AI Tutor Architecture}
+
+The AI Tutor is designed as an intelligent learning assistant
+that supports students during the examination preparation process.
+Instead of relying only on the general knowledge of a Large Language
+Model (LLM), the proposed system combines the LLM with a
+Retrieval-Augmented Generation (RAG) pipeline.
+
+The AI Tutor receives a student's question, identifies the relevant
+learning context, retrieves appropriate learning resources, and
+provides the retrieved information to the language model as
+additional context.
+
+The overall process consists of five main stages:
+
+\begin{enumerate}
+	\item Student question submission.
+	\item Query processing and retrieval.
+	\item Relevant learning-resource selection.
+	\item LLM response generation.
+	\item AI Tutor answer delivery.
+\end{enumerate}
+
+\section{Document Ingestion}
+
+Learning materials are first collected from approved educational
+resources. The documents are processed and divided into smaller
+chunks before being converted into vector representations.
+
+The preprocessing stage may include text extraction, cleaning,
+chunking, metadata assignment, and embedding generation.
+
+Metadata can include:
+
+\begin{itemize}
+	\item Course identifier.
+	\item Knowledge domain.
+	\item Learning objective.
+	\item Difficulty level.
+	\item Source document.
+	\item Content type.
+\end{itemize}
+
+\section{Vector Retrieval}
+
+After preprocessing, each document chunk is transformed into an
+embedding vector. These vectors are stored in a vector database
+such as Qdrant or Pinecone.
+
+When a student submits a question, the question is also converted
+into an embedding. The system searches for learning-resource vectors
+that are semantically similar to the student's question.
+
+The retrieved resources are then passed to the LLM as contextual
+information.
+
+\section{Prompt Construction}
+
+The prompt supplied to the LLM contains the student's question,
+retrieved learning resources, and relevant learning context.
+
+A simplified structure is:
+
+\begin{verbatim}
+	System Instruction
+	Student Context
+	Retrieved Learning Resources
+	Student Question
+	Response Requirements
+\end{verbatim}
+
+This structure helps the AI Tutor generate answers that are
+consistent with the learning materials used by the platform.
+
+\section{AI Tutor Response Generation}
+
+The LLM generates the final response based on the student's question
+and the retrieved context. The response should prioritize
+educational clarity and provide explanations appropriate to the
+student's learning level.
+
+The AI Tutor may provide:
+
+\begin{itemize}
+	\item Concept explanations.
+	\item Step-by-step solutions.
+	\item Explanations of incorrect answers.
+	\item Summaries of learning materials.
+	\item Additional practice questions.
+	\item Suggestions for related learning topics.
+\end{itemize}
+
+\section{Hallucination Mitigation}
+
+Because generated responses may contain unsupported information,
+the proposed system should restrict the AI Tutor to retrieved
+learning resources whenever possible.
+
+The system can also record the retrieved documents associated with
+each response. This provides additional traceability for evaluating
+AI Tutor quality.
+
+\section{AI Tutor Evaluation}
+
+The AI Tutor should be evaluated using several criteria:
+
+\begin{itemize}
+	\item Answer relevance.
+	\item Factual consistency with learning resources.
+	\item Retrieval relevance.
+	\item Explanation quality.
+	\item Response latency.
+	\item Unsupported-answer rate.
+\end{itemize}
 \section{Retrieval-Augmented Generation}
 
 RAG is proposed to connect the language model with contextual learning resources. Instead of relying only on the model's general knowledge, the system can retrieve relevant learning content before generating a response.
 
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}[
-    box/.style={rectangle, rounded corners, draw, minimum width=3.1cm, minimum height=0.9cm, align=center},
-    arrow/.style={-{Latex}, thick},
-    node distance=1.2cm
-]
-\node[box] (q) {Student Question};
-\node[box, right=of q] (retrieve) {Retrieve Relevant\\Learning Resources};
-\node[box, right=of retrieve] (llm) {LLM\\Response Generation};
-\node[box, below=of retrieve] (vector) {Vector Database\\Qdrant / Pinecone};
-\node[box, below=of llm] (answer) {AI Tutor\\Answer};
-
-\draw[arrow] (q) -- (retrieve);
-\draw[arrow] (retrieve) -- (llm);
-\draw[arrow] (retrieve) -- (vector);
-\draw[arrow] (vector) -- (llm);
-\draw[arrow] (llm) -- (answer);
-\end{tikzpicture}
-\caption{Proposed AI Tutor and RAG flow}
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/ai_tutor_rag.png}
+	\caption{Proposed AI Tutor and RAG flow}
+	\label{fig:ai-tutor-rag}
 \end{figure}
 
 \section{RAG Technology}
@@ -482,6 +683,28 @@ The proposed implementation may use LangChain or Semantic Kernel for orchestrati
 \section{Purpose}
 
 Learning analytics provides continuous monitoring of learning effectiveness, competency development, study habits, and engagement.
+% ============================================================
+% Learning Analytics Dashboard
+% ============================================================
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{images/08_learning_analytics_dashboard.png}
+	\caption{Learning Analytics Dashboard}
+	\label{fig:learning-analytics-dashboard}
+\end{figure}
+
+Figure~\ref{fig:learning-analytics-dashboard} illustrates the
+learning analytics dashboard of the proposed platform. The dashboard
+provides an overview of student competency, performance trends,
+weak learning areas, prediction results, learning activities, and
+personalized recommendations.
+
+The dashboard supports multiple monitoring perspectives, including
+student self-monitoring, teacher monitoring, and parent progress
+monitoring. The information is generated from learning activities,
+assessment results, competency measurements, and analytics data
+stored by the platform.
 
 \section{Collected Indicators}
 
@@ -520,52 +743,153 @@ Analytics is not only a reporting layer. It also provides input to the AI person
 % ============================================================
 \chapter{IMPLEMENTATION}
 
-\section{Implementation Architecture}
+\section{Implementation Overview}
 
-The implementation is planned around separated Mobile, Web, Backend, AI Services, and Analytics components. This modular structure supports future scaling and integration.
+The proposed platform is implemented as a modular intelligent
+learning system consisting of a student mobile application, web
+application, backend services, PostgreSQL database, AI services,
+and learning analytics.
 
-\section{Backend}
+The mobile and web applications communicate with the backend
+through REST APIs. The backend manages authentication, learning
+data, assessments, recommendations, and communication with AI
+services.
 
-The backend may be implemented using ASP.NET Core Web API or Node.js (Express). It is responsible for APIs, authentication, learning data management, and communication with AI services.
+The main technologies proposed for implementation are Flutter for
+the mobile application, ReactJS or Next.js for the web application,
+ASP.NET Core Web API or Node.js for backend services, and PostgreSQL
+for data storage.
 
-\section{Database}
 
-PostgreSQL is proposed as the primary database for structured learning data. The final database schema should cover users, roles, courses, competency frameworks, questions, assessments, learning activities, recommendations, and analytics data.
+% ============================================================
+\section{Mobile and Web Applications}
 
-\section{Authentication and Authorization}
-
-JWT and OAuth2 are proposed for authentication. Role-Based Access Control is used to separate permissions for administrators, teachers, students, and parents.
-
-\section{AI Services}
-
-AI-related services include:
-
-\begin{itemize}
-    \item Recommendation Engine.
-    \item Knowledge Tracing.
-    \item Student Performance Prediction.
-    \item LLM-based AI Tutor.
-    \item Retrieval-Augmented Generation.
-\end{itemize}
-
-\section{Cloud and CI/CD}
-
-Microsoft Azure is proposed as the cloud deployment environment. GitHub Actions is proposed for CI/CD automation, while GitHub is used for version control.
-
-\section{Implementation Status}
-
-At the reporting stage, specific implementation details should be updated by the development team, including:
+The Flutter mobile application supports Android and iOS and provides
+students with the main learning functions:
 
 \begin{itemize}
-    \item Actual backend framework selected.
-    \item Final database schema.
-    \item Implemented API endpoints.
-    \item Actual AI models.
-    \item Deployment architecture.
-    \item CI/CD workflow.
-    \item Screenshots of completed interfaces.
+	\item Diagnostic assessment and target score configuration.
+	\item Personalized learning paths.
+	\item Adaptive exercises and mock examinations.
+	\item Learning progress monitoring.
+	\item AI Tutor interaction.
+	\item Personalized recommendations.
 \end{itemize}
 
+The web application provides management and monitoring functions for
+administrators, teachers, academic managers, and parents.
+
+Its main modules include user and role management, courses, learning
+materials, question banks, assessments, analytics, and AI
+recommendations.
+
+
+% ============================================================
+\section{Backend and Database}
+
+The backend provides the central service layer between client
+applications, the database, and AI components.
+
+The main responsibilities include authentication, authorization,
+student profiles, learning activities, assessments, recommendations,
+and analytics.
+
+PostgreSQL is used to store structured learning information such as
+users, student profiles, courses, learning materials, questions,
+assessments, learning activities, recommendations, and analytics.
+
+JWT and Role-Based Access Control are used to protect API endpoints
+and separate permissions between administrators, teachers, students,
+and parents.
+
+
+% ============================================================
+\section{AI Components}
+
+The AI layer provides the main intelligent functions of the platform.
+It includes recommendation, Knowledge Tracing, student performance
+prediction, and the AI Tutor.
+
+The Recommendation Engine analyzes the student's learning profile,
+assessment results, competency levels, target score, and learning
+activities to recommend suitable learning materials and exercises.
+
+Knowledge Tracing is used to estimate competency progression, while
+the prediction component uses learning and performance data to
+estimate examination performance.
+
+The system continuously updates recommendations according to new
+learning activities and assessment results.
+
+
+% ============================================================
+\section{AI Tutor and RAG}
+
+The AI Tutor uses a Large Language Model together with
+Retrieval-Augmented Generation (RAG).
+
+The main process is:
+
+\begin{enumerate}
+	\item Student submits a question.
+	\item Relevant learning resources are retrieved.
+	\item Retrieved information is provided as context to the LLM.
+	\item The LLM generates an educational response.
+	\item The response is returned to the student.
+\end{enumerate}
+
+Qdrant or Pinecone can be used as the vector database for storing
+learning-resource embeddings.
+
+The AI Tutor supports question explanations, concept clarification,
+knowledge summarization, and additional practice questions.
+
+
+% ============================================================
+\section{Learning Analytics}
+
+The system records learning activities such as study duration,
+quiz performance, assessment results, competency progression, and
+engagement.
+
+These data are processed by the Learning Analytics component and
+displayed through dashboards.
+
+Students can monitor their learning progress and weak areas, while
+teachers and parents can monitor student development and examination
+readiness.
+
+The analytics data also provide feedback for the recommendation and
+prediction components.
+
+
+% ============================================================
+\section{Deployment and Security}
+
+Microsoft Azure is proposed for cloud deployment. GitHub is used for
+version control and GitHub Actions can automate testing, building,
+and deployment.
+
+The system applies HTTPS, JWT authentication, Role-Based Access
+Control, input validation, and secure database access.
+
+The proposed architecture is modular and scalable, with a target of
+supporting at least 1,000 concurrent active users and an average
+response time below three seconds for standard operations.
+
+
+% ============================================================
+\section{Implementation Summary}
+
+The implementation combines mobile and web applications, REST
+backend services, PostgreSQL, AI recommendation, Knowledge Tracing,
+performance prediction, LLM, RAG, vector database, and learning
+analytics.
+
+This architecture supports the project's core objective of providing
+an adaptive learning environment in which learning activities and
+student performance continuously influence personalized learning
+recommendations.
 % ============================================================
 % CHAPTER 10
 % ============================================================
@@ -579,17 +903,47 @@ Testing should verify functional correctness, technical requirements, AI behavio
 
 Functional tests should cover:
 
-\begin{itemize}
-    \item Authentication and authorization.
-    \item Diagnostic assessment.
-    \item Learning profile generation.
-    \item Personalized learning path creation.
-    \item Adaptive recommendations.
-    \item AI Tutor interactions.
-    \item Learning analytics.
-    \item Examination performance prediction.
-    \item Teacher and parent monitoring.
-\end{itemize}
+\section{Functional Test Cases}
+
+\begin{longtable}{p{0.12\textwidth}p{0.28\textwidth}p{0.25\textwidth}p{0.20\textwidth}}
+	\toprule
+	\textbf{ID} & \textbf{Test Case} & \textbf{Expected Result} & \textbf{Status}\\
+	\midrule
+	
+	TC01 & Student login with valid credentials
+	& User is authenticated and redirected to the student dashboard
+	& Planned\\
+	
+	TC02 & Student completes diagnostic assessment
+	& Assessment result is stored and Learning Profile is generated
+	& Planned\\
+	
+	TC03 & Generate personalized learning path
+	& System generates learning activities based on competency and target score
+	& Planned\\
+	
+	TC04 & Submit adaptive quiz
+	& Quiz result is recorded and recommendation is updated
+	& Planned\\
+	
+	TC05 & Ask AI Tutor a question
+	& AI Tutor retrieves relevant resources and generates an answer
+	& Planned\\
+	
+	TC06 & View learning analytics
+	& Dashboard displays learning progress and competency indicators
+	& Planned\\
+	
+	TC07 & Teacher reviews student progress
+	& Teacher can view student learning information
+	& Planned\\
+	
+	TC08 & Parent monitors student
+	& Parent can view permitted progress information
+	& Planned\\
+	
+	\bottomrule
+\end{longtable}
 
 \section{Performance Testing}
 
