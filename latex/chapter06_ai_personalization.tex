@@ -1,0 +1,38 @@
+\chapter{AI Personalization}
+\section{Personalization Concept}
+
+Personalized learning in modern educational systems aims to move away from the traditional "one-size-fits-all" approach by tailoring the educational experience to meet the unique needs, pace, and capabilities of each individual learner. Within the context of competency assessment exam preparation, personalization involves dynamically adjusting learning objectives, recommended study paths, practice intensity, and content difficulty. By continuously interpreting student interactions, behavioral data, and academic performance, the system ensures that learners focus on their specific knowledge gaps rather than redundantly reviewing mastered material, thereby maximizing study efficiency and optimizing target score achievement.
+
+\section{Learning Profile}
+
+The Learning Profile serves as the foundational data model that represents a student's current academic standing, preferences, and behavioral traits within the system. Generated initially through diagnostic assessments, the profile aggregates multiple dimensions:
+
+\begin{itemize}
+	\item \textbf{Competency Matrix:} Quantifies the student's mastery level across different knowledge domains and cognitive skills required by the competency assessment exam (e.g., quantitative reasoning, logical thinking, and reading comprehension).
+	\item \textbf{Behavioral Indicators:} Tracks learning consistency, average study duration, quiz completion rates, and engagement patterns.
+	\item \textbf{Preferences \& Goals:} Captures the student's target examination score, available preparation timeframe, and preferred study schedules.
+\end{itemize}
+
+This profile is dynamically updated in real-time as the student progresses through lessons and mock examinations.
+
+\section{Recommendation Process}
+
+The recommendation process acts as the core decision-making engine that translates the student's Learning Profile into actionable daily learning activities. Instead of a static curriculum, the system employs a multi-step recommendation workflow:
+
+\begin{itemize}
+	\item \textbf{Diagnostic Filtering:} Identifies weak knowledge clusters based on initial or periodic assessment results.
+	\item \textbf{Adaptive Sequencing:} Determines the optimal order of topics and practice exercises based on prerequisite dependencies and the student's Zone of Proximal Development (ZPD).
+	\item \textbf{Dynamic Schedule Adjustment:} Automatically adjusts daily study plans and revision milestones when a student completes tasks ahead of schedule or falls behind, ensuring continuous alignment with their target examination date.
+\end{itemize}
+
+\section{Knowledge Tracing}
+
+Knowledge Tracing is the computational process of modeling and tracking the dynamic evolution of a student's cognitive state and skill mastery over time. As the student answers practice questions or completes quizzes, the system records binary correctness indicators (correct/incorrect) alongside contextual metadata (e.g., question difficulty, concept tags, and response time). By applying cognitive modeling algorithms (such as Bayesian or deep neural network-based knowledge tracing variants), the system estimates the probability that a student has mastered a specific concept. This continuous tracing allows the platform to accurately decide when a student is ready to advance to more challenging material or requires remedial practice.
+
+\section{Performance Prediction"}
+
+Performance prediction leverages historical learning data, competency progression trajectories, and behavioral analytics to forecast a student's likelihood of success in the actual examination. Using machine learning regression and classification models, the system evaluates patterns such as mock test score improvements, consistency in study habits, and knowledge mastery levels to estimate the final predicted score. Furthermore, this component identifies potential academic risks---such as failing to meet target score expectations within the remaining preparation period---and automatically triggers learning adjustments or alerts to guide the student toward corrective actions
+
+% ============================================================
+% CHAPTER 7
+% ============================================================
