@@ -1,0 +1,73 @@
+\chapter{AI TUTOR \& RAG}
+
+\section{AI Tutor Objectives}
+
+The AI Tutor is engineered to function as an intelligent virtual mentor, providing continuous, automated academic assistance throughout the student's preparation journey. Moving beyond static help sections or pre-compiled FAQ pages, the AI Tutor engages learners through dynamic interactions designed to bridge the gap between self-directed study and individualized instruction. The primary objectives and core functions of the AI Tutor include:
+
+\begin{itemize}
+    \item Explaining incorrect answers: Systematically analyzing student errors made during quizzies or mock examinations,pinpointing specific logical or computational flaws,and guiding the learner  toward the correct reasoning path 
+    \item Clarifying difficult concepts: Translating complex theoretical frameworks from competency assessment domains into intuitive, digestible explanations tailored to the student's cognitive level.
+    \item Summarizing knowledge: Generating concise, targeted topic summaries and revision notes focusing specifically on the learner's identified weak areas.
+    \item Generating additional practice questions: Dynamically creating customized variant questions that match the exact format, cognitive skills, and difficulty requirements of target competency examinations.
+    \item Recommending study techniques: Suggesting evidence-based learning methods, time management tips, and strategic revision workflows to optimize study sessions.
+    \item Answering academic questions: Responding accurately to open-ended academic inquiries by leveraging verified syllabus materials and context-aware reasoning.
+\end{itemize}
+
+\section{Retrieval-Augmented Generation}
+
+\section{Retrieval-Augmented Generation}
+\label{sec:rag}
+
+To ensure high accuracy, contextual relevance, and strict curriculum alignment---while effectively mitigating the hallucination risks inherent in standard Large Language Models (LLMs)---the platform integrates a Retrieval-Augmented Generation (RAG) architecture. Instead of relying exclusively on the model's parametric memory, the system dynamically retrieves verified learning resources prior to response generation.
+
+The architectural workflow operates through a structured multi-stage pipeline, as illustrated in Figure~\ref{fig:rag_pipeline}.
+
+\begin{figure}[H]
+	\centering
+\begin{tikzpicture}[
+	box/.style={rectangle, rounded corners, draw, minimum width=3.1cm, minimum height=0.9cm, align=center},
+	arrow/.style={-{Latex}, thick},
+	node distance=1.2cm
+	]
+	\node[box] (q) {Student Question};
+	\node[box, right=of q] (retrieve) {Retrieve Relevant\\Learning Resources};
+	\node[box, right=of retrieve] (llm) {LLM\\Response Generation};
+	\node[box, below=of retrieve] (vector) {Vector Database\\Qdrant / Pinecone};
+	\node[box, below=of llm] (answer) {AI Tutor\\Answer};
+	
+	\draw[arrow] (q) -- (retrieve);
+	\draw[arrow] (retrieve) -- (llm);
+	\draw[arrow] (retrieve) -- (vector);
+	\draw[arrow] (vector) -- (llm);
+	\draw[arrow] (llm) -- (answer);
+\end{tikzpicture}
+	\caption{Proposed AI Tutor and RAG pipeline}
+	\label{fig:rag_pipeline}
+\end{figure}
+
+The pipeline consists of five main stages:
+
+\begin{enumerate}
+	\item \textbf{Query Reception:} The student submits an academic question or a request for error explanation via the mobile or web application interface.
+	\item \textbf{Context Retrieval:} The input query is transformed into a dense vector embedding, which is then used to perform a similarity search against the vector database.
+	\item \textbf{Augmented Synthesis:} The retrieved context snippets, combined with the student's Learning Profile metadata, are injected into structured prompt templates.
+	\item \textbf{Response Generation:} The LLM processes the augmented prompt to synthesize a precise, context-aware explanation.
+	\item \textbf{Response Delivery:} The generated answer is rendered on the student's interface.
+\end{enumerate}
+\section{RAG Technology}
+
+The proposed implementation may use LangChain or Semantic Kernel for orchestration, an LLM service such as the OpenAI GPT API, and Qdrant or Pinecone as the vector database. These components form a modular, scalable, and maintainable technology stack.
+
+The technology stack consists of three main layers:
+
+\begin{enumerate}
+	\item Orchestration Framework: LangChain or Semantic Kernel is employed to manage prompt engineering pipelines, text chunking, document loaders, and conversational memory chains.
+	\item Large Language Model (LLM): The OpenAI GPT API serves as the primary natural language understanding and text-generation engine, delivering high-quality reasoning capabilities.
+	\item Vector Database: Qdrant or Pinecone is deployed as the underlying vector database to handle high-speed similarity searches and secure storage of embedded educational documents.
+\end{enumerate}
+
+The vector database is populated with three main types of educational content: official textbooks, question banks, and verified detailed solutions. This ensures that the AI Tutor's responses are grounded in reliable, curriculum-aligned materials.
+
+% ============================================================
+% CHAPTER 8
+% ============================================================
