@@ -1,0 +1,210 @@
+\chapter{TESTING \& EVALUATION}
+
+\section{Testing and Evaluation Overview}
+
+Testing and evaluation are conducted to verify that the Personalized Learning Path Platform satisfies its functional, performance, security, and AI-related requirements.
+
+The testing process focuses on the main system functions and evaluates whether the implemented components operate correctly and support the intended learning processes.
+
+The main testing areas include:
+
+\begin{itemize}
+	\item Functional testing.
+	\item Performance testing.
+	\item AI evaluation.
+	\item Security testing.
+	\item User and acceptance evaluation.
+\end{itemize}
+
+\section{Functional Testing}
+
+Functional testing verifies the main business flows of the system.
+
+The following functions should be tested:
+
+\begin{itemize}
+	\item User authentication and authorization.
+	\item Competency diagnostic assessment.
+	\item Learning profile generation.
+	\item Personalized learning path generation.
+	\item Adaptive learning recommendations.
+	\item AI Tutor interaction.
+	\item RAG-based question answering.
+	\item Learning analytics.
+	\item Examination performance prediction.
+	\item Teacher monitoring.
+	\item Parent monitoring.
+\end{itemize}
+
+Each function should be tested using representative test cases to verify the expected system behavior.
+
+\subsection{Authentication and Authorization Testing}
+
+Authentication testing verifies whether users can securely log in to the system.
+
+Authorization testing verifies whether each user role can access only the functions permitted for that role.
+
+The main roles include:
+
+\begin{itemize}
+	\item Student.
+	\item Teacher.
+	\item Parent.
+	\item Administrator.
+\end{itemize}
+
+\subsection{Diagnostic Assessment Testing}
+
+Diagnostic assessment testing verifies whether the system can:
+
+\begin{itemize}
+	\item Present assessment questions correctly.
+	\item Record student answers.
+	\item Calculate assessment results.
+	\item Store assessment data.
+	\item Use assessment results to support learning profile generation.
+\end{itemize}
+
+\subsection{Personalized Learning Testing}
+
+Personalized learning testing verifies whether the system can generate learning recommendations and learning paths based on available student information.
+
+The evaluation should consider factors such as:
+
+\begin{itemize}
+	\item Competency level.
+	\item Assessment results.
+	\item Learning progress.
+	\item Learning activities.
+	\item Learning needs.
+\end{itemize}
+
+\section{Performance Testing}
+
+Performance testing evaluates whether the system can satisfy the proposed non-functional performance requirements.
+
+The proposal specifies an average response time of less than 3 seconds for standard operations and support for at least 1,000 concurrent active users.
+
+Therefore, performance testing should measure:
+
+\begin{itemize}
+	\item Average API response time.
+	\item Concurrent-user capacity.
+	\item Database response performance.
+	\item AI service latency.
+	\item System behavior under increased workload.
+\end{itemize}
+
+The performance test results should be recorded and compared with the defined requirements.
+
+If the actual system has not yet been tested under the required workload, no performance result should be reported as an achieved result.
+
+\section{AI Evaluation}
+
+AI components require dedicated evaluation because their outputs cannot be evaluated only through conventional functional testing.
+
+\subsection{Recommendation System Evaluation}
+
+The Recommendation Engine should be evaluated based on the relevance of recommended learning content to the student's learning profile, competency level, and learning progress.
+
+\subsection{Knowledge Tracing Evaluation}
+
+Knowledge Tracing should be evaluated based on its ability to consistently estimate changes in students' knowledge or mastery using assessment and learning activity data.
+
+\subsection{Performance Prediction Evaluation}
+
+The Student Performance Prediction component should be evaluated by comparing predicted examination performance with appropriate evaluation data.
+
+The final evaluation metrics should depend on the prediction model and dataset actually used by the development team.
+
+\subsection{AI Tutor Evaluation}
+
+The AI Tutor should be evaluated based on:
+
+\begin{itemize}
+	\item Answer relevance.
+	\item Answer quality.
+	\item Academic correctness.
+	\item Response consistency.
+	\item Unsupported or hallucinated information.
+\end{itemize}
+
+\subsection{RAG Evaluation}
+
+The RAG-based question-answering system should be evaluated based on:
+
+\begin{itemize}
+	\item Retrieval relevance.
+	\item Retrieved information quality.
+	\item Relevance of generated answers.
+	\item Grounding of answers in the retrieved knowledge.
+	\item Unsupported-answer rate.
+\end{itemize}
+
+\section{Security Testing}
+
+Security testing verifies whether the system protects user accounts, learning data, and APIs.
+
+The main security testing areas include:
+
+\begin{itemize}
+	\item Authentication.
+	\item Role-Based Access Control.
+	\item API access control.
+	\item Input validation.
+	\item Data protection.
+	\item Secure communication.
+	\item Backup and recovery procedures.
+\end{itemize}
+
+Security testing should verify that unauthorized users cannot access protected functions or data.
+
+\section{Learning Analytics Evaluation}
+
+The Learning Analytics component should be evaluated to verify whether the system correctly collects and presents learning information.
+
+The evaluation should consider:
+
+\begin{itemize}
+	\item Accuracy of recorded learning activities.
+	\item Accuracy of assessment results.
+	\item Correctness of progress information.
+	\item Correctness of displayed performance information.
+	\item Accessibility of dashboards for different user roles.
+\end{itemize}
+
+\section{Usability Evaluation}
+
+Usability evaluation focuses on whether students, teachers, and parents can use the system effectively.
+
+The evaluation may consider:
+
+\begin{itemize}
+	\item Ease of navigation.
+	\item Clarity of information.
+	\item Ease of completing learning activities.
+	\item Ease of monitoring learning progress.
+	\item Overall user experience.
+\end{itemize}
+
+\section{Acceptance Criteria}
+
+The system should be considered ready for final evaluation when the major project requirements have been implemented and evaluated.
+
+The main acceptance criteria include:
+
+\begin{itemize}
+	\item Core business flows are implemented.
+	\item Major functional test cases pass.
+	\item Performance requirements are measured.
+	\item AI components are evaluated using appropriate metrics.
+	\item Security requirements are tested.
+	\item Learning analytics functions operate correctly.
+	\item Required project deliverables are demonstrated.
+\end{itemize}
+
+\section{Evaluation Status}
+
+At the current stage, the testing and evaluation chapter defines the testing strategy and evaluation criteria for the proposed system.
+
+Actual test results, performance measurements, AI evaluation metrics, screenshots, and acceptance results should be added after the corresponding system components have been implemented and tested by the development team.

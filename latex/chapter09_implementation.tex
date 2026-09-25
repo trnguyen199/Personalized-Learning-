@@ -1,0 +1,211 @@
+\chapter{IMPLEMENTATION}
+
+\section{Implementation Overview}
+
+The implementation of the Personalized Learning Path Platform is organized into several major components, including the Mobile Application, Web Portal, Backend API, Learning Database, AI Services, and Learning Analytics.
+
+The system follows a modular architecture in which each component is responsible for a specific group of functions. This structure supports maintainability, scalability, and future integration with additional learning systems and examination frameworks.
+
+The main implementation components include:
+
+\begin{itemize}
+	\item Student Mobile Application.
+	\item Teacher and Administrator Web Portal.
+	\item Parent Portal.
+	\item Backend API.
+	\item Learning Database.
+	\item AI Services.
+	\item Learning Analytics.
+\end{itemize}
+
+\section{Frontend Implementation}
+
+\subsection{Student Mobile Application}
+
+The Student Mobile Application provides the main learning interface for students. The application is designed to support the core learning and examination preparation processes.
+
+The main functions include:
+
+\begin{itemize}
+	\item User authentication.
+	\item Competency diagnostic assessment.
+	\item Learning profile presentation.
+	\item Personalized learning path.
+	\item Recommended learning content.
+	\item Learning activity tracking.
+	\item Learning progress monitoring.
+	\item AI Tutor interaction.
+\end{itemize}
+
+Flutter is identified as the proposed framework for developing the mobile application.
+
+\subsection{Web Portal}
+
+The Web Portal provides interfaces for teachers and administrators to manage and monitor the learning system.
+
+The main functions include:
+
+\begin{itemize}
+	\item User and role management.
+	\item Learning content management.
+	\item Assessment management.
+	\item Student performance monitoring.
+	\item Learning analytics visualization.
+	\item System administration.
+\end{itemize}
+
+ReactJS or Next.js is identified as the proposed technology for Web Portal development.
+
+\subsection{Parent Portal}
+
+The Parent Portal provides parents with information about the learning progress and performance of students.
+
+The portal is intended to support:
+
+\begin{itemize}
+	\item Learning progress monitoring.
+	\item Performance information.
+	\item Examination preparation progress.
+	\item Student learning status.
+\end{itemize}
+
+\section{Backend Implementation}
+
+The Backend provides the main application programming interfaces and business logic of the system.
+
+The main responsibilities of the Backend include:
+
+\begin{itemize}
+	\item User and role management.
+	\item Authentication and authorization.
+	\item Course and learning content management.
+	\item Assessment management.
+	\item Learning activity management.
+	\item Personalized learning path management.
+	\item Recommendation service integration.
+	\item AI service integration.
+	\item Learning analytics data processing.
+\end{itemize}
+
+The proposal identifies ASP.NET Core Web API or Node.js with Express as the backend technology options.
+
+The Backend communicates with the database and AI services through APIs and provides the necessary data to the Mobile Application and Web Portal.
+
+\section{Database Implementation}
+
+PostgreSQL is identified as the primary database technology for storing structured learning data.
+
+The database is expected to manage information related to:
+
+\begin{itemize}
+	\item Users and roles.
+	\item Courses and learning content.
+	\item Competency frameworks.
+	\item Questions and assessments.
+	\item Learning activities.
+	\item Learning profiles.
+	\item Personalized recommendations.
+	\item Student performance.
+	\item Learning analytics data.
+\end{itemize}
+
+The database structure is designed to support the collection and analysis of learning activities required for personalized learning.
+
+\section{Authentication and Authorization}
+
+The system requires secure authentication and role-based authorization.
+
+JWT is used as the proposed authentication mechanism, while OAuth2 can be integrated for authentication and authorization requirements.
+
+Role-Based Access Control (RBAC) is used to separate permissions among different types of users, including:
+
+\begin{itemize}
+	\item Students.
+	\item Teachers.
+	\item Parents.
+	\item Administrators.
+\end{itemize}
+
+Each role is provided with access to functions appropriate to its responsibilities.
+
+\section{AI Services Implementation}
+
+AI services are an important part of the personalized learning platform. The proposed AI components include Recommendation Systems, Knowledge Tracing, Student Performance Prediction, and an LLM-based AI Tutor.
+
+\subsection{Recommendation Engine}
+
+The Recommendation Engine is designed to provide learning content recommendations according to the student's learning profile, assessment results, learning activities, and progress.
+
+The recommendation process is intended to support adaptive learning by identifying suitable learning activities for individual students.
+
+\subsection{Knowledge Tracing}
+
+Knowledge Tracing is used to estimate a student's level of knowledge or mastery of learning concepts based on learning and assessment data.
+
+The information obtained from Knowledge Tracing can support the generation of personalized learning paths and recommendations.
+
+\subsection{Student Performance Prediction}
+
+The Student Performance Prediction component is intended to analyze student learning data and estimate examination performance.
+
+The predicted performance can be used as an additional source of information for monitoring examination preparation.
+
+\subsection{AI Tutor}
+
+The AI Tutor provides an AI-based learning support interface for students.
+
+The AI Tutor is intended to support students by answering academic questions and providing learning assistance during the preparation process.
+
+\section{Retrieval-Augmented Generation}
+
+Retrieval-Augmented Generation (RAG) is proposed as an approach for improving the grounding of AI Tutor responses.
+
+The RAG process consists of retrieving relevant information from a knowledge base and providing the retrieved information as context for the language model before generating an answer.
+
+The proposed AI integration includes an LLM API such as OpenAI GPT API together with a framework such as LangChain or Semantic Kernel.
+
+A vector database such as Qdrant or Pinecone can be used to store and retrieve vector representations of learning materials.
+
+\section{Learning Analytics}
+
+Learning Analytics is used to collect and analyze student learning data.
+
+The analytics component can provide information about:
+
+\begin{itemize}
+	\item Learning progress.
+	\item Assessment results.
+	\item Learning activities.
+	\item Competency development.
+	\item Learning performance.
+	\item Examination preparation status.
+\end{itemize}
+
+The collected information can be presented through dashboards for students, teachers, and parents according to their roles.
+
+\section{Cloud and CI/CD}
+
+Microsoft Azure is identified as the proposed cloud deployment environment.
+
+GitHub is used for source code management and version control, while GitHub Actions is proposed for Continuous Integration and Continuous Deployment (CI/CD).
+
+The cloud-based architecture is intended to support scalability, availability, and future expansion of the platform.
+
+\section{Implementation Status}
+
+At the current stage, the implementation chapter describes the proposed technical architecture, technology stack, and implementation components of the system.
+
+Specific implementation results should be updated according to the actual development progress of the project. These results may include:
+
+\begin{itemize}
+	\item Final technology selections.
+	\item Implemented API endpoints.
+	\item Final database schema.
+	\item Implemented AI models and services.
+	\item RAG knowledge base.
+	\item Deployment configuration.
+	\item CI/CD workflow.
+	\item Screenshots of implemented interfaces.
+\end{itemize}
+
+Only components that have been implemented and verified by the development team should be reported as completed implementation results.
