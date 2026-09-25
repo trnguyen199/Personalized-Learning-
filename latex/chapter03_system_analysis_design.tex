@@ -1,0 +1,73 @@
+\chapter{SYSTEM ANALYSIS \& DESIGN}
+
+\section{Proposed System Architecture}
+
+The platform is designed as a modular ecosystem separating client applications, backend services, AI services, and analytics.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    box/.style={rectangle, rounded corners, draw, minimum width=3.2cm, minimum height=0.9cm, align=center},
+    arrow/.style={-{Latex}, thick},
+    node distance=0.9cm and 1.0cm
+]
+\node[box] (mobile) {Student\\Mobile App};
+\node[box, right=of mobile] (web) {Web Application\\Teacher / Admin / Parent};
+\node[box, below=of $(mobile)!0.5!(web)$] (backend) {Backend Services\\REST APIs};
+\node[box, below=of backend] (db) {PostgreSQL\\Learning Data};
+\node[box, left=of db] (ai) {AI Services\\Recommendation / Prediction};
+\node[box, right=of db] (rag) {LLM + RAG\\AI Tutor};
+\node[box, below=of $(ai)!0.5!(rag)$] (analytics) {Learning Analytics};
+
+\draw[arrow] (mobile) -- (backend);
+\draw[arrow] (web) -- (backend);
+\draw[arrow] (backend) -- (db);
+\draw[arrow] (backend) -- (ai);
+\draw[arrow] (backend) -- (rag);
+\draw[arrow] (db) -- (analytics);
+\draw[arrow] (analytics) -- (ai);
+\end{tikzpicture}
+\caption{High-level proposed system architecture}
+\end{figure}
+
+\section{Main Modules}
+
+\begin{itemize}
+    \item User and role management.
+    \item Course and competency framework management.
+    \item Learning material and question-bank management.
+    \item Diagnostic assessment.
+    \item Personalized learning path management.
+    \item Adaptive recommendation.
+    \item AI Tutor and RAG.
+    \item Learning analytics.
+    \item Examination performance prediction.
+\end{itemize}
+
+\section{Technology Stack}
+
+\begin{longtable}{p{0.28\textwidth}p{0.60\textwidth}}
+\toprule
+\textbf{Component} & \textbf{Proposed Technology}\\
+\midrule
+Mobile & Flutter (Android and iOS)\\
+Web & ReactJS / Next.js\\
+Backend & ASP.NET Core Web API or Node.js (Express)\\
+Database & PostgreSQL\\
+Authentication & JWT and OAuth2\\
+AI & LLMs, recommendation systems, knowledge tracing, machine learning\\
+RAG & LangChain or Semantic Kernel\\
+Vector database & Qdrant or Pinecone\\
+Cloud & Microsoft Azure\\
+CI/CD & GitHub Actions\\
+Version control & GitHub\\
+\bottomrule
+\end{longtable}
+
+\section{Data Flow Overview}
+
+The overall learning data flow starts with assessment and learning activities. The backend stores the data, analytics services derive learning indicators, and AI components use these indicators to update recommendations and performance estimates.
+
+% ============================================================
+% CHAPTER 4
+% ============================================================
